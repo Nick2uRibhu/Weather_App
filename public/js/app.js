@@ -11,7 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-    fetch('/weather?address=${location}').then((response) => {
+    fetch('/current?access_key=e84129bc20b99e3b1452c36379b4e3ff&query='+location).then((response) => {
         response.json().then((data) => {
             if(data.error){
                 messageOne.textContent = data.error.info
