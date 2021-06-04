@@ -14,11 +14,11 @@ weatherForm.addEventListener('submit', (e) => {
     fetch('/weather?address='+location).then((response) => {
         response.json().then((data) => {
             if(data.error){
-                messageOne.textContent = data.error.info
+                messageOne.textContent = data.error
                 
             } else {
-                messageOne.textContent = data.request.query
-                messageTwo.textContent = 'Currently it is ' + data.current.temperature + ' deegres'
+                messageOne.textContent = data.location
+                messageTwo.textContent = data.forecast
             }
         })
     })
